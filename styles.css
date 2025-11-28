@@ -1,0 +1,321 @@
+:root {
+  --bg: #0b1510;
+  --bg-soft: #121f17;
+  --card: #18281e;
+  --accent: #34d399;
+  --accent-soft: rgba(52, 211, 153, 0.16);
+  --accent-strong: #22c55e;
+  --text: #f9fafb;
+  --muted: #9ca3af;
+  --border-soft: rgba(148, 163, 184, 0.25);
+  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45);
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: var(--bg); /* o #050908, o el color que quieras fijo */
+  color: var(--text);
+}
+
+/* Contenedor principal */
+
+.app {
+  min-height: 100vh;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 18px 18px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--bg); /* mismo fondo que el body */
+}
+/* Header */
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+      135deg,
+      rgba(34, 197, 94, 0.18),
+      rgba(5, 46, 22, 0.85)
+    ),
+    #020617;
+  box-shadow: var(--shadow-soft);
+  position: sticky;
+  top: 12px;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+}
+
+.logo-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 18px;
+  background: radial-gradient(circle at 30% 30%, var(--hulk-yellow), var(--accent-strong));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header-text h1 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.header-text p {
+  margin: 2px 0 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Intro */
+
+.intro {
+  padding-inline: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.intro-text {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--border-soft);
+  width: fit-content;
+}
+
+.pill .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px rgba(52, 211, 153, 0.25);
+}
+
+/* Buscador */
+
+.search-wrapper {
+  margin-top: 4px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+#searchInput::placeholder {
+  color: #6b7280;
+}
+
+#searchInput:focus {
+  border-color: var(--accent-strong);
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.4);
+  background: rgba(15, 23, 42, 0.95);
+}
+
+/* Lista */
+
+.list-wrapper {
+  flex: 1;
+  padding: 2px 0 4px;
+  overflow: visible;
+}
+
+.price-list {
+  list-style: none;
+  margin: 0;
+  margin-top: 6px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Tarjeta de precio */
+
+.price-card {
+  background: radial-gradient(circle at top left, #064e3b 0, #020617 99%);
+  border-radius: var(--radius-lg);
+  padding: 10px 13px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+}
+
+.price-card-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.price-type {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.price-tagline {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 10px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  margin-top: 6px;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent-strong);
+}
+
+/* Precio a la derecha */
+
+.price-card-right {
+  text-align: right;
+  min-width: 100px;
+}
+
+.price-amount {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #bbf7d0;
+}
+
+.price-caption {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* Estados */
+
+.loading {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 2px solid rgba(148, 163, 184, 0.35);
+  border-top-color: var(--accent-strong);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.empty {
+  margin-top: 18px;
+  padding: 14px 12px;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px dashed var(--border-soft);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Footer */
+
+.app-footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(31, 41, 55, 0.9);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.app-footer .small {
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+/* Desktop */
+
+@media (min-width: 768px) {
+  .app {
+    max-width: 640px;
+    padding: 26px 24px 30px;
+  }
+  .app-header {
+    margin-top: 10px;
+  }
+  .price-card {
+    padding: 13px 16px;
+  }
+  .price-type {
+    font-size: 14px;
+  }
+  .price-amount {
+    font-size: 16px;
+  }
+}

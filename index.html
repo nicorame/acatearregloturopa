@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, user-scalable=no"
+  />
+  <title>Aca te arreglo tu ropa</title>
+
+  <!-- Fuente Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+        <div class="logo-circle">
+            <img src="logo.enc" alt="Aca te arreglo tu ropa" class="logo-img" />
+        </div>
+      <div class="header-text">
+        <h1>Aca te arreglo tu ropa</h1>
+        <p>Taller de costura · Ajustes y arreglos profesionales</p>
+      </div>
+    </header>
+
+    <section class="intro">
+
+      <div class="search-wrapper">
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Buscar: ruedo, cierre, vestido..."
+        />
+      </div>
+    </section>
+
+    <main class="list-wrapper">
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <span>Cargando precios...</span>
+      </div>
+
+      <div id="empty" class="empty" hidden>
+        <p>No encontramos resultados para tu búsqueda.</p>
+      </div>
+
+      <ul id="priceList" class="price-list" hidden></ul>
+    </main>
+
+    <footer class="app-footer">
+      <p>Consultá por trabajos especiales o vestidos de fiesta 👗</p>
+      <p class="small">
+        Los precios están expresados en pesos argentinos y pueden
+        variar según el caso.
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
